@@ -1,0 +1,42 @@
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  color: #0f172a;
+  background: #f7f7f8;
+  line-height: 1.55;
+}
+
+.hero { height: 100vh; position: relative; overflow: hidden; }
+.parallax { height: 100%; position: relative; isolation: isolate; }
+
+.layer {
+  position: absolute; inset: 0;
+  background-image: var(--img);
+  background-size: cover; background-position: center;
+  will-change: transform; transform: translateZ(0);
+}
+
+.title {
+  position: absolute; inset: 0; display: grid; place-items: center;
+  font-size: clamp(2.5rem, 6vw, 6rem); font-weight: 800; color: #fff;
+  text-shadow: 0 8px 30px rgba(0,0,0,.35); pointer-events: none;
+  will-change: transform; mix-blend-mode: lighten;
+}
+.title small{
+  display:block;
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  font-weight: 500;
+  opacity: .9;
+}
+
+.content { max-width: 900px; margin: 0 auto; padding: 64px 20px 120px; }
+section {
+  background:#fff; border:1px solid #e2e8f0; border-radius:14px;
+  box-shadow:0 10px 30px rgba(2,6,23,.06); padding:24px; margin-bottom:22px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .layer, .title { transform: none !important; }
+}
